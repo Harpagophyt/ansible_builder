@@ -1,0 +1,19 @@
+---
+version: 3
+
+build_arg_defaults:
+  ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: "--ignore-certs"
+
+options:
+  package_manager_path: /usr/bin/microdnf
+
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  system: bindep.txt
+
+images:
+  base_image:
+    #name: hub.lab.example.com/ee-supported-rhel8:latest
+    name: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest
+
